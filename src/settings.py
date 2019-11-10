@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -99,6 +100,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Email Settings
+ANYMAIL = {
+    # (exact settings here depend on your ESP...)
+    "MAILGUN_API_KEY": "234-f696beb4-74101fbc",
+    "MAILGUN_SENDER_DOMAIN": 'sd.mailgun.org',  # your Mailgun domain, if needed
+}
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"  # or sendgrid.EmailBackend, or...
+DEFAULT_FROM_EMAIL = "amishpatel@cs.toronto.edu"  # if you don't already have this in settings
+SERVER_EMAIL = "your-server@example.com"  # ditto (default from-email for Django errors)
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
