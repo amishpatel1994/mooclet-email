@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from src.mailer import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('email/send', views.send_email),
+    path('email/callback', views.new_email_metric)
 ]
