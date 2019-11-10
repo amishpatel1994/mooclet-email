@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -103,8 +104,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Email Settings
 ANYMAIL = {
     # (exact settings here depend on your ESP...)
-    "MAILGUN_API_KEY": "234-f696beb4-74101fbc",
-    "MAILGUN_SENDER_DOMAIN": 'sd.mailgun.org',  # your Mailgun domain, if needed
+    "MAILGUN_API_KEY": os.getenv("MAILGUN_API_KEY"),
+    "MAILGUN_SENDER_DOMAIN": os.getenv("MAILGUN_SENDER_DOMAIN"),  # your Mailgun domain, if needed
 }
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"  # or sendgrid.EmailBackend, or...
 DEFAULT_FROM_EMAIL = "amishpatel@cs.toronto.edu"  # if you don't already have this in settings
