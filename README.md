@@ -10,3 +10,8 @@ python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
 ```
+
+2. Run server
+```
+python manage.py runserver
+```
