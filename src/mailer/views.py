@@ -10,7 +10,7 @@ import os
 @api_view(['POST'])
 def send_email(request):
 	body = request.data
-	sender_email = "Ronak Patel <ronak1997@gmail.com>"
+	sender_email = "FName LName <something@domain.com>"
 	BASE_URL = "https://celery.mooclet.com/engine/api/v1/mooclet/"
 	mooclet_id = body["id"]
 	URL = BASE_URL + mooclet_id + "/run?user_id="
