@@ -27,5 +27,7 @@ def send_email(request):
 
 @api_view(['POST'])
 def new_email_metric(request):
-	#TODO: Make the API call to MOOClet to send email metrics back to MOOClet
+	# TODO: Make the API call to MOOClet to send email metrics back to MOOClet
+	# Once a verfied mailgun account is created, please follow these step to add this endpoint as a webhook:
+	# https://documentation.mailgun.com/en/latest/user_manual.html#webhooks
 	return Response(status=200, data="Got new metric")
