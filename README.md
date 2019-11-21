@@ -27,9 +27,10 @@ python manage.py runserver
 ## Setting up Mailgun
 This repository was tested thus far on a sandbox account using Amish's personal account
 
-1. Create an account on Mailgun
+1. Create an account on Mailgun: https://www.mailgun.com/
   * Make sure to submit the credit card information to get full availability - the first 10,000 emails are still free so don't worry!
-2. Verify your own sender domain (probably would be josephwilliams.com?)
+2. Verify your own sender domain (probably would be josephwilliams.com?):
+https://help.mailgun.com/hc/en-us/articles/360026833053-Domain-Verification-Walkthrough
 3. Grab the API keys from Mailgun's dashboard
 4. Create a .env file under the `src` folder:
 ```
@@ -46,8 +47,7 @@ MAILGUN_SENDER_DOMAIN=<YOUR_SENDER_DOMAIN>
 ## TODO
 This is just a prototype which has hooked up MOOClet to this service for sending emails. It makes an API call to MOOClet and get's the email contents. After this, it sends out an email using Mailgun. 
 
-* Setup your own Mailgun account following the information above:
-https://help.mailgun.com/hc/en-us/articles/360026833053-Domain-Verification-Walkthrough
+* Setup your own Mailgun account following the information above
 * Once mailgun account is setup and verfied, enable email tracking on mailgun for you domain by following these instructions:
 https://documentation.mailgun.com/en/latest/user_manual.html#tracking-messages
 * Add some authentication (Ex. Basic Auth) to the `/email/send` endpoint
